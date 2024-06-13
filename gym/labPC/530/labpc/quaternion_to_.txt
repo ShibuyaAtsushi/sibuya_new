@@ -1,0 +1,15 @@
+def random_quaternion_xy_plane(self):
+    # 80度から100度をラジアンに変換
+    theta_min = np.deg2rad(80)
+    theta_max = np.deg2rad(100)
+    
+    # 指定した範囲内でランダムな回転角度を生成
+    theta = np.random.uniform(theta_min, theta_max)
+    
+    # クオータニオンの成分を計算
+    q_w = np.cos(theta / 2)
+    q_x = 0
+    q_y = 0
+    q_z = np.sin(theta / 2)
+    
+    return np.array([q_w, q_x, q_y, q_z])
